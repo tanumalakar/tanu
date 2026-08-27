@@ -283,66 +283,7 @@
 </div>
 </div>      
 
-
-</section> 
-
-<!-- ================= CHATBOT WIDGET START ================= -->
-<div id="ai-chat-widget">
-  <!-- Floating Launcher Button -->
-  <button id="chat-toggle-btn" aria-label="Open Chat">
-    <svg id="chat-open-icon" viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-    </svg>
-    <svg id="chat-close-icon" viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
-      <line x1="18" y1="6" x2="6" y2="18"></line>
-      <line x1="6" y1="6" x2="18" y2="18"></line>
-    </svg>
-  </button>
-
-  <!-- Chat Window Container -->
-  <div id="chat-box" class="chat-hidden">
-    <!-- Header -->
-    <div class="chat-header">
-      <div class="chat-header-info">
-        <div class="avatar-dot">
-          <div class="chat-avatar">TM</div>
-          <span class="online-indicator"></span>
-        </div>
-        <div>
-          <h4>Tanu's AI Assistant</h4>
-          <span class="chat-status">Online • Always Active</span>
-        </div>
-      </div>
-      <button id="chat-minimize-btn" title="Close">✕</button>
-    </div>
-
-    <!-- Messages Area -->
-    <div id="chat-messages" class="chat-messages">
-      <div class="message bot-msg">
-        <p>হ্যালো! 👋 আমি তনু মালাকারের AI অ্যাসিস্ট্যান্ট। IT Support, Web বা অন্য কোনো প্রয়োজনে আপনাকে কীভাবে সহায়তা করতে পারি?</p>
-      </div>
-    </div>
-
-    <!-- Typing Indicator -->
-    <div id="typing-indicator" class="typing-indicator" style="display: none;">
-      <span></span><span></span><span></span>
-    </div>
-
-    <!-- Input Footer -->
-    <form id="chat-form" class="chat-input-area">
-      <input type="text" id="chat-input" placeholder="Type a message..." autocomplete="off" required />
-      <button type="submit" id="chat-send-btn" aria-label="Send">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="22" y1="2" x2="11" y2="13"></line>
-          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-        </svg>
-      </button>
-    </form>
-  </div>
-</div>
-
-
-
+<!-- ================= CHATBOT WIDGET start ================= --> 
 <script>
 (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="RKFoUuQBCjgiNOEThWl8L";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
 </script>
