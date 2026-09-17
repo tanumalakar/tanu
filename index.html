@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanu Malakar | Professional Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ================= CSS VARIABLES ================= */
+        :root {
+            --primary-color: #2563eb; /* Royal Blue */
+            --primary-dark: #1e40af;
+            --bg-body: #f8fafc; /* Very light slate */
+            --bg-surface: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --border-color: #e2e8f0;
+            --transition: all 0.3s ease;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        /* ================= NAVBAR ================= */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        .logo span { color: var(--primary-color); }
+        
+        .nav-links { display: flex; gap: 30px; list-style: none; }
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        .nav-links a:hover { color: var(--primary-color); }
+
+        /* ================= HERO SECTION ================= */
+        .hero {
+            padding: 150px 30px 100px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+        .hero-text h3 {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 15px;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+        .hero-text h2 {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            margin-bottom: 25px;
+        }
+        .hero-text p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 550px;
+            margin-bottom: 35px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: var(--primary-color);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: var(--transition);
+            border: 2px solid var(--primary-color);
+        }
+        .btn:hover { background: var(--primary-dark); border-color: var(--primary-dark); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--primary-color);
+            margin-left: 15px;
+        }
+        .btn-outline:hover { background: var(--primary-color); color: #ffffff; }
+
+        .profile-img {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #ffffff;
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* ================= GENERAL SECTIONS ================= */
+        .section { padding: 100px 30px; max-width: 1000px; margin: 0 auto; }
+        .bg-white { background: var(--bg-surface); max-width: 100%; }
+        
+        .sec-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        .sec-title span { color: var(--primary-color); }
+
+        /* ================= EXPERIENCE ================= */
+        .card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 25px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+        .card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: rgba(37, 99, 235, 0.2); }
+        
+        .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; }
+        .card-header h3 { font-size: 1.4rem; color: var(--text-main); }
+        .card-header h4 { font-size: 1rem; color: var(--primary-color); font-weight: 500; }
+        .badge { background: #eff6ff; color: var(--primary-color); padding: 5px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; }
+        
+        .card ul { padding-left: 20px; color: var(--text-muted); }
+        .card li { margin-bottom: 8px; }
+
+        /* ================= SKILLS ================= */
+        .skills-wrapper { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .skill-pill {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            cursor: default;
+        }
+        .skill-pill:hover { background: var(--primary-color); color: #ffffff; border-color: var(--primary-color); transform: translateY(-2px); }
+
+        /* ================= EDUCATION & CERTIFICATIONS ================= */
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .edu-item { margin-bottom: 25px; }
+        .edu-item h3 { font-size: 1.2rem; color: var(--text-main); }
+        .edu-item p { color: var(--text-muted); font-size: 0.95rem; }
+        .edu-item .year { color: var(--primary-color); font-weight: 600; font-size: 0.85rem; }
+
+        /* ================= CONTACT ================= */
+        .contact-container { text-align: center; }
+        .contact-container p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 30px; }
+        .contact-info { display: flex; justify-content: center; gap: 40px; margin-bottom: 40px; flex-wrap: wrap; }
+        .info-box { background: #ffffff; padding: 20px 30px; border-radius: 8px; border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); }
+        .info-box h4 { color: var(--primary-color); margin-bottom: 5px; }
+        .info-box p { color: var(--text-main); font-weight: 500; }
+
+        footer { text-align: center; padding: 30px; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.9rem; background: #ffffff; }
+
+        /* ================= ANIMATIONS ================= */
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 850px) {
+            .hero { flex-direction: column-reverse; text-align: center; padding-top: 120px; }
+            .hero-text h1 { font-size: 2.8rem; }
+            .hero-text p { margin: 0 auto 30px; }
+            .nav-links { display: none; }
+            .grid-2 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Tanu<span>Malakar</span></a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="about">
+        <div class="hero-text reveal">
+            <h3>IT Professional</h3>
+            <h1>Tanu Malakar</h1>
+            <h2>IT Executive & Support Specialist</h2>
+            <p>I am an IT executive specialized in troubleshooting hardware, maintaining software, and managing IT Enabled Services. I love to learn new things every day and keep up with new technologies.</p>
+            <div>
+                <a href="#contact" class="btn">Get In Touch</a>
+                <a href="https://linkedin.com/in/tanumalakar" target="_blank" class="btn btn-outline">LinkedIn Profile</a>
+            </div>
+        </div>
+        <div class="hero-image reveal">
+            
+            <img src="profile.jpg" alt="Tanu Malakar" class="profile-img">
+        </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="section">
+        <h2 class="sec-title reveal">Work <span>Experience</span></h2>
+        
+        <div class="card reveal">
+            <div class="card-header">
+                <div>
+                    <h3>IT Officer</h3>
+                    <h4>Group of Company | Banani, Dhaka</h4>
+                </div>
+                <span class="badge">Jun 2024 - Present</span>
+            </div>
+            <ul>
+                <li>Provide end-user IT support including hardware, software, and diagnostic machine connectivity.</li>
+                <li>Administer hospital software & databases (HIS/LIS/PACS), including backup, restore & reporting.</li>
+                <li>Oversee and maintain CCTV surveillance, Biometric attendance, and IT assets/inventory.</li>
+            </ul>
+        </div>
+
+        <div class="card reveal">
+            <div class="card-header">
+                <div>
+                    <h3>IT Executive</h3>
+                    <h4>Chinese Company | Baridhara DOHS, Dhaka</h4>
+                </div>
+                <span class="badge">Jan 2022 - May 2024</span>
+            </div>
+            <ul>
+                <li>Provided L1 & L2 technical support alongside user terminal support (H/W & S/W).</li>
+                <li>Installed, configured, and maintained operating systems.</li>
+                <li>Managed ERP Service (Security and analysis) and Data Backup & Recovery.</li>
+            </ul>
+        </div>
+
+        <div class="card reveal">
+            <div class="card-header">
+                <div>
+                    <h3>IT Officer</h3>
+                    <h4>NGO | Mirpur, Dhaka</h4>
+                </div>
+                <span class="badge">Nov 2020 - Dec 2021</span>
+            </div>
+            <ul>
+                <li>Maintained IT inventory, documentation, and website/social media platforms.</li>
+                <li>Supported remote users via TeamViewer, AnyDesk, and Remote Desktop.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="section bg-white" style="padding-top: 80px; padding-bottom: 80px;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 class="sec-title reveal">Professional <span>Skills</span></h2>
+            <div class="skills-wrapper reveal">
+                <span class="skill-pill">Hardware Troubleshooting</span>
+                <span class="skill-pill">Software Maintenance</span>
+                <span class="skill-pill">HIS / LIS / PACS</span>
+                <span class="skill-pill">CCNA</span>
+                <span class="skill-pill">TCP/IP Networking</span>
+                <span class="skill-pill">ERP Software</span>
+                <span class="skill-pill">CCTV & Biometrics</span>
+                <span class="skill-pill">AI Automation</span>
+                <span class="skill-pill">Web Design</span>
+                <span class="skill-pill">Customer Service</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION & CERTIFICATIONS -->
+    <section id="education" class="section">
+        <h2 class="sec-title reveal">Education & <span>Awards</span></h2>
+        <div class="grid-2">
+            <div class="card reveal">
+                <h3 style="color: var(--primary-color); margin-bottom: 20px; font-size: 1.3rem;">Academic Profile</h3>
+                
+                <div class="edu-item">
+                    <h3>M.Sc. in IIT</h3>
+                   
+                </div>
+                
+                <div class="edu-item">
+                    <h3>B.Sc. in CSE</h3>
+                    
+                </div>
+            </div>
+
+            <div class="card reveal">
+                <h3 style="color: var(--primary-color); margin-bottom: 20px; font-size: 1.3rem;">Certifications</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 12px;"><strong>Artificial Intelligence</strong> - Competency Certified NSDA, DYD Project (Govt.)</li>
+                    <li style="margin-bottom: 12px;"><strong>IT Support Service L3</strong> - Competency Certified NSDA, ASSET Project (Govt.)</li>
+                    <li style="margin-bottom: 12px;"><strong>CCNA Certified</strong> - CSL Training Academy</li>
+                    <li style="margin-bottom: 12px;"><strong>Digital Marketing</strong> - Coder Trust Bangladesh</li>
+                    <li><strong>Web Design & Development</strong> - CodeCare BD</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section bg-white contact-container">
+        <h2 class="sec-title reveal">Get In <span>Touch</span></h2>
+        <p class="reveal">I am always open to discussing new projects, creative ideas, or opportunities to be part of your visions.</p>
+        
+        <div class="contact-info reveal">
+            <div class="info-box">
+                <h4>Email</h4>
+                <p>tanumalakar247@gmail.com</p>
+            </div>
+            <div class="info-box">
+                <h4>Phone</h4>
+                <p>+880 1633957552</p>
+            </div>
+            <div class="info-box">
+                <h4>Location</h4>
+                <p>Dhaka, Bangladesh</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© Tanu Malakar. All Rights Reserved.</p>
+    </footer>
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script>
+        // Scroll Reveal Animation Observer
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target); // Stop observing once revealed
+            });
+        }, revealOptions);
+
+        revealElements.forEach(el => {
+            revealOnScroll.observe(el);
+        });
+    </script>
+</body>
+</html>
