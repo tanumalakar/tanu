@@ -115,4 +115,19 @@ https://resume-tanu.netlify.app/
 
 ## 📞 Contact
 
-If you need help w
+If you need help with IT infrastructure, technical support, networking, website development, or digital services, feel free to contact me.
+
+📱 **Phone:** +880 1633 95 75 52
+📧 **Email:** [tanumalakar247@gmail.com](mailto:tanumalakar247@gmail.com)
+
+---
+
+## ⭐ Support
+
+If you find this project useful or interesting, consider giving the repository a ⭐ on GitHub.
+
+---
+
+### © Tanu Malakar
+
+Made with ❤️ by **Tanu Malakar**
